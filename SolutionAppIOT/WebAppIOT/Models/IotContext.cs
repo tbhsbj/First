@@ -13,6 +13,16 @@ namespace WebAppIOT.Models
         }
 
         public DbSet<User> Users { get; set; }
-    
+        public DbSet<CapteurSenario> CapteurSenario { get; set; }
+        public DbSet<Chambre> Chambre { get; set; }
+        public DbSet<Equipement> Equipement { get; set; }
+        public DbSet<Senario> Senario { get; set; }
+        public DbSet<Senario_Equipement> Senario_Equipement { get; set; }
+        public DbSet<SuperUser> SuperUser { get; set; }
+        public DbSet<System> System { get; set; }
+        public DbSet<Technicien> Technicien { get; set; }
+        public DbSet<Technicien_System> Technicien_System { get; set; }
+
+
     }
 }

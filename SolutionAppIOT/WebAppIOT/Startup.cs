@@ -6,9 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
 using WebAppIOT.Models;
-
+using Microsoft.EntityFrameworkCore;
 namespace WebAppIOT
 {
     public class Startup
@@ -23,8 +22,9 @@ namespace WebAppIOT
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connsrt = Configuration["ConnectionString:MyConnStr"];
-            services.AddDbContext<IotContext>(options => options.UseSqlServer(connsrt));
+            // ConnectionString in appsettings.json
+            var src = Configuration["ConnectionString:MyConnStr"]; 
+            services.AddDbContext<IotContext>(options => options.UseSqlServer(src));
             services.AddMvc();
         }
 
