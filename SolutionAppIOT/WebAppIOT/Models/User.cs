@@ -3,22 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebAppIOT.Models
 {
     public class User
     {
-        public int userID { get; set; }
-        public string nom { get; set; }
-        public string prenom { get; set; }
-        [Required]
+        public int ID { get; set; }
+        public string Name { get; set; }
         public string login { get; set; }
-        [Required]
-        [DataType(DataType.Password)]
         public string pwd { get; set; }
-        public System system { get; set; }
-
+        public DateTime Lastlogin { get; set; }
+        public int SystemID { get; set; }
+        public virtual System System { get; set; }
+        public virtual ICollection<Chambre> Chambres { get; set; }
 
     }
 }

@@ -7,12 +7,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebAppIOT.Models
 {
-    public class Technicien
+    public class SuperUser
     {
-        public int TechnicienId { get; set; }
-        public string Cin { get; set; }
+        public int ID { get; set; }
         public string Name { get; set; }
-        public string LastName { get; set; }
-        public virtual ICollection<Technicien_System> Technicien_Systems { get; set; }
+        public string login { get; set; }
+        public string pwd { get; set; }
+        public DateTime Lastlogin { get; set; }
+        public virtual ICollection<System> Systems { get; set; }
     }
 }
